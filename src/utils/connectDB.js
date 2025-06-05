@@ -1,7 +1,10 @@
 const { MongoClient, ObjectId } = require('mongodb');
+const dotenv = require('dotenv');
+dotenv.config();
 
 //change to env or connection string
-const client  = new MongoClient('mongodb://localhost:27017');
+const MONGO_URI = process.env.MONGO_URI
+const client  = new MongoClient(MONGO_URI);
 
 
 //Set the collection name
